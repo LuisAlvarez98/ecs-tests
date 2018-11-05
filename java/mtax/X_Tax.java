@@ -7,6 +7,7 @@ public class X_Tax {
     
     private Object id;
     private BigDecimal base;
+    //El impuesto creo que seria mejor como entero
     private String tax;
     private String typeFactor;
     private BigDecimal tasaOCuota;
@@ -20,13 +21,12 @@ public class X_Tax {
     private Date updated;
     private String version;
 
+    //Agregar valores default?
     public X_Tax() {
     }
-
     public Object getId() {
         return id;
     }
-
     public void setId(Object id) {
         this.id = id;
     }
@@ -54,11 +54,11 @@ public class X_Tax {
     public void setTypeFactor(String typeFactor) {
         this.typeFactor = typeFactor;
     }
-
+    //Ya que todos los metodos son en ingles por estandares este tambien deberia.
     public BigDecimal getTasaOCuota() {
         return tasaOCuota;
     }
-
+   //Ya que todos los metodos son en ingles por estandares este tambien deberia.
     public void setTasaOCuota(BigDecimal tasaOCuota) {
         this.tasaOCuota = tasaOCuota;
     }
@@ -70,11 +70,11 @@ public class X_Tax {
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
-
+    //Ya que todos los metodos son en ingles por estandares este tambien deberia.
     public boolean isTrasladado() {
         return trasladado;
     }
-
+    //Ya que todos los metodos son en ingles por estandares este tambien deberia.
     public void setTrasladado(boolean trasladado) {
         this.trasladado = trasladado;
     }
