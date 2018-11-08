@@ -5,13 +5,14 @@ import java.util.List;
 public class MTax implements Constant {
     
     public MTax(){}
+    
     public static List<String> validate(List<X_Tax> xTaxList) {
-        
         List<String> errorList = new ArrayList<>();
         
         if(xTaxList != null && xTaxList.size() > 0) {
             List<String> validIds = new ArrayList<>();
             int counter = 0;
+
             for (X_Tax tax : xTaxList) {
                 if(tax.getId() != null) {
                     validIds.add(tax.getId().toString());
@@ -31,8 +32,8 @@ public class MTax implements Constant {
                 errorList.add("Debe de incluir al menos una tasa no local");
             }
             if(validIds.size() > 0){
-                    
                     List<X_Tax> xt = TaxsByListId(validIds, false);
+
                     if(xt.size() != validIds.size()){
                         errorList.add("Existen datos no guardados previamente");
                     }else{
@@ -42,9 +43,7 @@ public class MTax implements Constant {
                         }
                         for(int i = 0; i < xTaxList.size(); i++){
                            if(xTaxList.get(i).getId() == validIds.get(i)){
-                                xTaxList.get(i).setCreated(
-                                        map_taxs.get(xTaxList.get(i).getId().toString())
-                                                .getCreated());
+                                 xTaxList.get(i).setCreated(map_taxs.get(xTaxList.get(i).getId().toString()).getCreated());
                             }
                         }
                     }
