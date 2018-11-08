@@ -41,7 +41,7 @@ public class MTax implements Constant {
                             map_taxs.put(tax.getId().toString(), tax);
                         }
                         for(int i = 0; i < xTaxList.size(); i++){
-                            if(xTaxList.get(i).getId() != null){
+                           if(xTaxList.get(i).getId() == validIds.get(i)){
                                 xTaxList.get(i).setCreated(
                                         map_taxs.get(xTaxList.get(i).getId().toString())
                                                 .getCreated());
