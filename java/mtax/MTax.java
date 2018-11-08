@@ -16,15 +16,20 @@ public class MTax implements Constant {
             for (X_Tax tax : xTaxList) {
                 if(tax.getId() != null) {
                     validIds.add(tax.getId().toString());
-                }else if(tax.getAmount() <= 0){
+                }
+                if(tax.getAmount() <= 0){
                     errorList.add("El importe es obligatorio");
-                }else if(tax.getTax() == null){
+                }
+                if(tax.getTax() == null){
                     errorList.add("El impuesto es obligatorio");
-                }else if(tax.getRate() <= 0){
-                    errorList.add("La tasa es obligatoria")
-                }else if(tax.getShare() <= 0){
+                 }
+                if(tax.getRate() <= 0){
+                    errorList.add("La tasa es obligatoria");
+                }
+                if(tax.getShare() <= 0){
                     errorList.add("La cuota es obligatoria");
-                }else if(!tax.isLocal()){
+                }
+                if(!tax.isLocal()){
                     counter++;
                 }
             }
