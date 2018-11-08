@@ -13,17 +13,21 @@ public class MTax implements Constant {
             List<String> validIds = new ArrayList<>();
             int counter = 0;
             for (X_Tax tax : xTaxList) {
-                if(tax.getId() != null){
+                if(tax.getId() != null) {
                     validIds.add(tax.getId().toString());
-                }
-                if(tax.getTax() == null) {
+                }else if(tax.getAmount() <= 0){
+                    errorList.add("El importe es obligatorio");
+                }else if(tax.getTax() == null){
                     errorList.add("El impuesto es obligatorio");
-                }
-                if(!tax.isLocal()){
+                }else if(tax.getRate() <= 0){
+                    errorList.add("La tasa es obligatoria")
+                }else if(tax.getShare() <= 0){
+                    errorList.add("La cuota es obligatoria");
+                }else if(!tax.isLocal()){
                     counter++;
                 }
             }
-            if(counter <= 0){
+            if(counter == 0){
                 errorList.add("Debe de incluir al menos una tasa no local");
             }
             if(validIds.size() > 0){
