@@ -4,17 +4,14 @@ import java.util.List;
 
 public class MTax implements Constant {
     
-    public MTax(){
-        
-    }
-    
+    public MTax(){}
     public static List<String> validate(List<X_Tax> xTaxList) {
         
         List<String> errorList = new ArrayList<>();
         
         if(xTaxList != null && xTaxList.size() > 0) {
             List<String> validIds = new ArrayList<>();
-            int cont = 0;
+            int counter = 0;
             for (X_Tax tax : xTaxList) {
                 if(tax.getId() != null){
                     validIds.add(tax.getId().toString());
@@ -23,10 +20,10 @@ public class MTax implements Constant {
                     errorList.add("El impuesto es obligatorio");
                 }
                 if(!tax.isLocal()){
-                    cont++;
+                    counter++;
                 }
             }
-            if(cont<=0){
+            if(counter <= 0){
                 errorList.add("Debe de incluir al menos una tasa no local");
             }
             if(validIds.size() > 0){
