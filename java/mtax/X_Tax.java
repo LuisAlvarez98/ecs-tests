@@ -9,7 +9,8 @@ public class X_Tax {
     private BigDecimal base;
     private String tax;
     private String typeFactor;
-    private BigDecimal tasaOCuota;
+    private BigDecimal rate;
+    private BigDecimal share;
     private BigDecimal amount;
     private boolean transferred;
     private boolean local;
@@ -55,12 +56,20 @@ public class X_Tax {
         this.typeFactor = typeFactor;
     }
 
-    public BigDecimal getTasaOCuota() {
-        return tasaOCuota;
+    public BigDecimal getRate() {
+        return rate;
     }
 
-    public void setTasaOCuota(BigDecimal tasaOCuota) {
-        this.tasaOCuota = tasaOCuota;
+    public void setRate(BigDecimal rate) {
+        this.tasa = rate;
+    }
+
+    public BigDecimal getShare() {
+        return share;
+    }
+
+    public void setShare(BigDecimal share) {
+        this.share = share;
     }
 
     public BigDecimal getAmount() {
@@ -134,5 +143,4 @@ public class X_Tax {
     public void setVersion(String version) {
         this.version = version;
     }
-    
 }
