@@ -5,7 +5,7 @@ import java.util.List;
 public class MTax implements Constant {
     
     public MTax(){}
-    
+
     public static List<String> validate(List<X_Tax> xTaxList) {
         List<String> errorList = new ArrayList<>();
         
@@ -47,6 +47,8 @@ public class MTax implements Constant {
                             }
                         }
                     }
+            }else{
+                errorList.add("No hay valid id's");
             }
         }
         return errorList;
